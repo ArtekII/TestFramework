@@ -9,6 +9,13 @@ version="2.4">
 <servlet>
 <servlet-name>FrontControllerServlet</servlet-name>
 <servlet-class>pumpkin.servlet.FrontControllerServlet</servlet-class>
+
+<init-param>
+        <param-name>controller</param-name>
+        <param-value>test.controller</param-value>
+    </init-param>
+
+    <load-on-startup>1</load-on-startup>
 </servlet>
 
 <servlet-mapping>
