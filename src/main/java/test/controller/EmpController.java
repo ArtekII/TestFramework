@@ -3,11 +3,16 @@ package test.controller;
 import pumpkin.annotation.Controller;
 import pumpkin.annotation.UrlMapping;
 
-@Controller
+@Controller(path="/dev")
 public class EmpController {
 
-    @UrlMapping(value="/amdrama")
-    public void amdrama() {
+    @UrlMapping(value="test", method="GET")
+    public void test1() {
+
+    }
+
+    @UrlMapping(value="test", method="POST")
+    public void test2() {
 
     }
 }
