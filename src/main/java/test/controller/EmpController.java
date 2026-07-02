@@ -15,4 +15,14 @@ public class EmpController {
     public void test2() {
 
     }
+
+    @UrlMapping(value="execute/error", method="GET")
+    public void execute1() {
+        throw new RuntimeException("methode executee");
+    }
+
+    @UrlMapping(value = "execute/print", method = "GET")
+    public void execute2() {
+        System.out.println("methode executee"); //message sera visible dans la console/log Tomcat
+    }
 }
