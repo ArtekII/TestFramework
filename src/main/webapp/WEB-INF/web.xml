@@ -4,23 +4,27 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee
 http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
 version="2.4">
-<display-name>Application WEB affichant des Info</display-name>
 
-<servlet>
-<servlet-name>FrontControllerServlet</servlet-name>
-<servlet-class>pumpkin.servlet.FrontControllerServlet</servlet-class>
+    <display-name>Application WEB affichant des Info</display-name>
 
-<init-param>
+    <context-param>
         <param-name>controller</param-name>
         <param-value>test.controller</param-value>
-    </init-param>
+    </context-param>
 
-    <load-on-startup>1</load-on-startup>
-</servlet>
+    <listener>
+        <listener-class>pumpkin.listener.FrontControllerListener</listener-class>
+    </listener>
 
-<servlet-mapping>
-<servlet-name>FrontControllerServlet</servlet-name>
-<url-pattern>/*</url-pattern>
-</servlet-mapping>
+    <servlet>
+        <servlet-name>FrontControllerServlet</servlet-name>
+        <servlet-class>pumpkin.servlet.FrontControllerServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>FrontControllerServlet</servlet-name>
+        <url-pattern>/*</url-pattern>
+    </servlet-mapping>
 
 </web-app>
