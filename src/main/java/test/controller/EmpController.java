@@ -8,7 +8,7 @@ public class EmpController {
 
     @UrlMapping(value="test", method="GET")
     public void test1() {
-
+        System.out.println("Test Ok");
     }
 
     @UrlMapping(value="test", method="POST")
@@ -16,13 +16,18 @@ public class EmpController {
 
     }
 
-    @UrlMapping(value="execute/error", method="GET")
-    public void execute1() {
+    @UrlMapping(value = "error", method = "GET")
+    public void error() {
         throw new RuntimeException("methode executee");
     }
 
-    @UrlMapping(value = "execute/print", method = "GET")
-    public void execute2() {
+    @UrlMapping(value = "print", method = "GET")
+    public void print() {
         System.out.println("methode executee"); //message sera visible dans la console/log Tomcat
+    }
+
+    @UrlMapping(value = "hello", method = "GET")
+    public String hello() {
+        return "Hello World";
     }
 }
