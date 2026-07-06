@@ -1,7 +1,11 @@
 package test.controller;
 
-import pumpkin.annotation.Controller;
-import pumpkin.annotation.UrlMapping;
+import java.util.ArrayList;
+import java.util.List;
+
+import autumn.annotation.Controller;
+import autumn.annotation.UrlMapping;
+import autumn.mapping.ModelAndView;
 
 @Controller(path="/dev")
 public class EmpController {
@@ -29,5 +33,19 @@ public class EmpController {
     @UrlMapping(value = "hello", method = "GET")
     public String hello() {
         return "Hello World";
+    }
+
+    @UrlMapping(value = "list", method = "GET")
+    public ModelAndView testModel() {
+        ModelAndView m = new ModelAndView();
+
+        List<String> list = new ArrayList<>();
+        list.add("test1");
+        list.add("test2");
+
+        m.addAttribute("list", list);
+        m.setUrl("test/list");
+
+        return m;
     }
 }
