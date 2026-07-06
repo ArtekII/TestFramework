@@ -13,12 +13,12 @@ version="2.4">
     </context-param>
 
     <listener>
-        <listener-class>pumpkin.listener.FrontControllerListener</listener-class>
+        <listener-class>autumn.listener.FrontControllerListener</listener-class>
     </listener>
 
     <servlet>
         <servlet-name>FrontControllerServlet</servlet-name>
-        <servlet-class>pumpkin.servlet.FrontControllerServlet</servlet-class>
+        <servlet-class>autumn.servlet.FrontControllerServlet</servlet-class>
         <load-on-startup>1</load-on-startup>
     </servlet>
 

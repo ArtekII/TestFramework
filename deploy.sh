@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Définition des variables
-APP_NAME="TestPumpkin"
+APP_NAME="TestAutumn"
 SRC_DIR="src/main/java/*"
 WEB_DIR="src/main/webapp"
 BUILD_DIR="build"
