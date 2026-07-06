@@ -16,6 +16,16 @@ version="2.4">
         <listener-class>autumn.listener.FrontControllerListener</listener-class>
     </listener>
 
+    <init-param>
+        <param-name>prefix</param-name>
+        <param-value>/WEB-INF/views/</param-value>
+    </init-param>
+
+    <init-param>
+        <param-name>suffix</param-name>
+        <param-value>.jsp</param-value>
+    </init-param>
+
     <servlet>
         <servlet-name>FrontControllerServlet</servlet-name>
         <servlet-class>autumn.servlet.FrontControllerServlet</servlet-class>
