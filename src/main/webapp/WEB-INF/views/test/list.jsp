@@ -8,7 +8,7 @@
     <title>Liste</title>
 </head>
 <body>
-    <h1>Liste</h1>
+    <h1>Fruit</h1>
 
     <%
         List<String> list = (List<String>) request.getAttribute("list");
