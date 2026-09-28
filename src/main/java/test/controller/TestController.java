@@ -6,6 +6,7 @@ import java.util.List;
 import autumn.annotation.Controller;
 import autumn.annotation.UrlMapping;
 import autumn.mapping.ModelAndView;
+import autumn.annotation.WebApiRest;
 
 @Controller(path="/dev")
 public class TestController {
@@ -35,18 +36,20 @@ public class TestController {
     //     return "Hello World";
     // }
 
-    @UrlMapping(value = "list", method = "GET")
-    public ModelAndView fruit() {
-        ModelAndView m = new ModelAndView();
-
+    @UrlMapping(value = "fruit", method = "GET")
+    @WebApiRest
+    public List<String> fruit() {
         List<String> list = new ArrayList<>();
         list.add("pomme");
         list.add("poire");
         list.add("cerise");
 
-        m.addAttribute("list", list);
-        m.setUrl("test/list");
+        return list;
+    }
 
-        return m;
+    @UrlMapping(value = "ok", method = "GET")
+    @WebApiRest
+    public String ok() {
+        return "{\"ok\":true}";
     }
 }
