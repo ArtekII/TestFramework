@@ -1,4 +1,5 @@
 #!/bin/bash
+set -euo pipefail
 
 # Définition des variables
 APP_NAME="TestAutumn"
@@ -16,7 +17,7 @@ mkdir -p $BUILD_DIR/WEB-INF/classes
 
 # Compilation des fichiers Java avec le JAR des Servlets
 find $SRC_DIR -name "*.java" > sources.txt
-javac -cp $SERVLET_API_JAR:$AUTUMN -d $BUILD_DIR/WEB-INF/classes @sources.txt
+javac -parameters -cp $SERVLET_API_JAR:$AUTUMN -d $BUILD_DIR/WEB-INF/classes @sources.txt
 #rm sources.txt
 
 cp -r $LIB_DIR/*.jar $WEB_DIR/WEB-INF/lib/

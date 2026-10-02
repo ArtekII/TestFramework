@@ -11,38 +11,18 @@ import autumn.annotation.WebApiRest;
 @Controller(path="/dev")
 public class TestController {
 
-    // @UrlMapping(value="test", method="GET")
-    // public void test1() {
-    //     System.out.println("Test GET Ok");
-    // }
-
-    // @UrlMapping(value="test", method="POST")
-    // public void test2() {
-    //     System.out.println("Test POST Ok");
-    // }
-
-    // @UrlMapping(value = "error", method = "GET")
-    // public void error() {
-    //     System.out.println("Test Error Ok"); 
-    // }
-
-    // @UrlMapping(value = "print", method = "GET")
-    // public void print() {
-    //     System.out.println("Test Print Ok"); 
-    // }
-
-    // @UrlMapping(value = "hello", method = "GET")
-    // public String hello() {
-    //     return "Hello World";
-    // }
-
-    @UrlMapping(value = "fruit", method = "GET")
+    @UrlMapping(value = "test", method = "GET")
     @WebApiRest
-    public List<String> fruit() {
+    public List<String> test() {
         List<String> list = new ArrayList<>();
-        list.add("pomme");
-        list.add("poire");
-        list.add("cerise");
+        list.add("chaine1");
+        list.add("chaine2");
+        list.add("chaine3");
+        list.add("chaine4");
+        list.add("chaine5");
+        list.add("chaine6");
+        list.add("chaine7");
+        list.add("chaine8");
 
         return list;
     }
@@ -50,6 +30,18 @@ public class TestController {
     @UrlMapping(value = "ok", method = "GET")
     @WebApiRest
     public String ok() {
-        return "{\"ok\":true}";
+        return "{\"nom\":\"utilisateur\",\"estInscrit\":true,\"role\":1}";
+    }
+
+    @UrlMapping(value = "user", method = "GET")
+    public ModelAndView form() {
+        ModelAndView modelAndView = new ModelAndView("index");
+        
+        return modelAndView;
+    }
+
+    @UrlMapping(value = "user", method = "POST")
+    public String user(String name, int age, double montant) {
+        return "nom : " + name + ", age : " + age + ", montant : " + montant;
     }
 }
